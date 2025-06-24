@@ -1,0 +1,14 @@
+@import '../../theme.scss';
+
+.button {
+  padding: $space-sm $space-md;
+  background-color: $primary-color-medium;
+  color: $text-color-light;
+  border: none;
+  border-radius: $border-radius-8;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $primary-color-dark;
+  }
+}

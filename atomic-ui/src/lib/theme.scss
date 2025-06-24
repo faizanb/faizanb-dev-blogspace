@@ -1,0 +1,59 @@
+/** Colors **/
+$primary-color-dark: #5d5fef;
+$primary-color-medium: #7879f1;
+$primary-color-light: #a5a6f6;
+$primary-color-x-light: #e2e3fc;
+
+$text-color-light: #f1f2f6;
+$text-color-dark: #1e1b2e;
+
+$background-light: #fff5f0;
+$background-dark: #0e0e2c;
+
+/** Typography **/
+$font-family-base: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-heading: 'Georgia', serif;
+$font-family-monospace: 'Courier New', Courier, monospace;
+
+$font-size-sm: 0.875rem;
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+
+$line-height-base: 1.5;
+$line-height-heading: 1.25;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+/** Spacing **/
+$space-xs: 0.25rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 2rem;
+$space-xl: 4rem;
+$space-xxl: 8rem;
+
+/** Breakpoints **/
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+/** Shadows **/
+$box-shadow-light: 0 2px 4px rgba(0, 0, 0, 0.1);
+$box-shadow-medium: 0 4px 8px rgba(0, 0, 0, 0.2);
+$box-shadow-heavy: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+/** Z-Index **/
+$z-index-modal: 1040;
+
+/** Border **/
+$border-radius-4: 0.25rem;
+$border-radius-8: 0.5rem;
+$border-radius-12: 0.75rem;
+$border-radius-16: 1rem;
+
+/** Transitions **/
+$transition-duration: 0.3s;
+$transition-ease: cubic-bezier(0.4, 0, 0.2, 1);
