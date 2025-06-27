@@ -1,0 +1,24 @@
+@import '../../theme.scss';
+
+.heading {
+  color: $text-color-dark;
+  font-weight: $font-weight-bold;
+}
+
+h2 {
+  font-size: $font-size-lg;
+}
+h3 {
+  font-size: $font-size-base;
+}
+h4,
+h5,
+h6 {
+  font-size: $font-size-sm;
+}
+
+@media (prefers-color-scheme: dark) {
+  .heading {
+    color: $text-color-light;
+  }
+}

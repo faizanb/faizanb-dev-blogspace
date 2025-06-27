@@ -12,3 +12,14 @@
     background-color: $primary-color-dark;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .button {
+    background-color: $primary-color-x-light;
+    color: $text-color-dark;
+
+    &:hover {
+      background-color: $primary-color-light;
+    }
+  }
+}
