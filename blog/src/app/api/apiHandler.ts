@@ -1,17 +1,28 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-
 const STRAPI_API_URL = process.env.NX_STRAPI_API_URL;
 const STRAPI_AUTH_TOKEN = process.env.NX_STRAPI_AUTH_TOKEN;
 
+export type ApiHandlerRequest = {
+  method: string;
+  body?: any;
+  query?: any;
+};
+
+export type ApiHandlerResponse = {
+  status: number;
+  data: any;
+};
+
 export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+  reqObject: ApiHandlerRequest
+): Promise<ApiHandlerResponse> {
   if (!STRAPI_API_URL || !STRAPI_AUTH_TOKEN) {
-    return res.status(500).json({ error: 'Server configuration is missing.' });
+    return {
+      status: 500,
+      data: { error: 'Server configuration is missing.' },
+    };
   }
 
-  const { method, body, query } = req;
+  const { method, body, query } = reqObject;
 
   try {
     if (method === 'GET') {
@@ -22,7 +33,7 @@ export default async function handler(
       });
 
       const data = await response.json();
-      return res.status(response.status).json(data);
+      return { status: response.status, data };
     }
 
     if (method === 'POST') {
@@ -36,12 +47,18 @@ export default async function handler(
       });
 
       const data = await response.json();
-      return res.status(response.status).json(data);
+      return { status: response.status, data };
     }
 
-    return res.status(405).json({ error: 'Method not allowed' });
+    return {
+      status: 405,
+      data: { error: 'Method not allowed' },
+    };
   } catch (error) {
     console.error('Error in API handler:', error);
-    return res.status(500).json({ error: 'Internal server error' });
+    return {
+      status: 500,
+      data: { error: 'Internal server error' },
+    };
   }
 }
