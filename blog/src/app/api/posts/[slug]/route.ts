@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
-import handler from './apiHandler';
+import handler from '../../apiHandler';
 
-export async function fetchIndividualBlogPost(
-  req: NextRequest,
-  res: NextResponse,
+export async function GET(
+  request: Request,
   { params }: { params: { slug: string } }
 ): Promise<any> {
-  const { slug } = params;
+  const { slug } = await params;
   const response = await handler({
     method: 'GET',
     query: { endpoint: `/posts?filters[slug][$eq]=${slug}&populate=*` },

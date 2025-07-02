@@ -26,7 +26,7 @@ export default async function handler(
 
   try {
     if (method === 'GET') {
-      const response = await fetch(`${STRAPI_API_URL}/${query.endpoint}`, {
+      const response = await fetch(`${STRAPI_API_URL}${query.endpoint}`, {
         headers: {
           Authorization: `Bearer ${STRAPI_AUTH_TOKEN}`,
         },
@@ -37,7 +37,7 @@ export default async function handler(
     }
 
     if (method === 'POST') {
-      const response = await fetch(`${STRAPI_API_URL}/${query.endpoint}`, {
+      const response = await fetch(`${STRAPI_API_URL}${query.endpoint}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
