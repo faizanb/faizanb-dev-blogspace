@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@faizanb-dev-blogspace/atomic-ui": ["atomic-ui/src/index.ts"]
+      "@atomic-ui": ["atomic-ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
