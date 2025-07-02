@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-//import { Heading, CodeBlock } from '../../../../../atomic-ui/src/index';
+import { Heading } from '@atomic-ui';
 
 async function getBlogPost(slug: string): Promise<any> {
   const res = await fetch(`${process.env.BASE_URL}/api/posts/${slug}`, {
@@ -44,8 +44,7 @@ function renderContentBlock(block: any) {
   switch (block.__component) {
     case 'blocks.heading':
       return (
-        <div></div>
-        // <Heading key={block.id} text={block.text} type={block.level as any} />
+        <Heading key={block.id} text={block.text} type={block.level as any} />
       );
     case 'blocks.paragraph':
       // If type is html, render as HTML
