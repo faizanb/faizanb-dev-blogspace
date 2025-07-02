@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { Heading } from '@atomic-ui';
+import { Heading, CodeBlock } from '@atomic-ui';
 
 async function getBlogPost(slug: string): Promise<any> {
   const res = await fetch(`${process.env.BASE_URL}/api/posts/${slug}`, {
@@ -73,8 +73,7 @@ function renderContentBlock(block: any) {
       return null;
     case 'blocks.code-snippet':
       return (
-        // <CodeBlock key={block.id} code={block.code} lang={block.language} />
-        <div></div>
+        <CodeBlock key={block.id} code={block.code} lang={block.language} />
       );
     default:
       return null;

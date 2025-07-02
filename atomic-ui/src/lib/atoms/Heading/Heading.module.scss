@@ -5,15 +5,15 @@
   font-weight: $font-weight-bold;
 }
 
-h2 {
+.heading h2 {
   font-size: $font-size-lg;
 }
-h3 {
+.heading h3 {
   font-size: $font-size-base;
 }
-h4,
-h5,
-h6 {
+.heading h4,
+.heading h5,
+.heading h6 {
   font-size: $font-size-sm;
 }
 

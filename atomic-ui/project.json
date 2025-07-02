@@ -10,7 +10,14 @@
       "options": {
         "outputPath": "dist/atomic-ui",
         "tsConfig": "atomic-ui/tsconfig.lib.json",
-        "main": "atomic-ui/src/index.ts"
+        "main": "atomic-ui/src/index.ts",
+        "assets": [
+          {
+            "glob": "**/*.scss",
+            "input": "atomic-ui/src",
+            "output": "src"
+          }
+        ]
       }
     }
   },

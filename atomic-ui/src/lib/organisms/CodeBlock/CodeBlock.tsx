@@ -1,10 +1,12 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 import {
   createHighlighter as getHighlighter,
   type BundledLanguage,
   type BundledTheme,
 } from 'shiki';
-// import styles from './CodeBlock.module.scss';
+import styles from './CodeBlock.module.scss';
 
 type Props = {
   code: string;
@@ -56,7 +58,7 @@ export default function CodeBlock({
 
   return (
     <div
-      // className={styles.codeBlock}
+      className={styles.codeBlock}
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );
