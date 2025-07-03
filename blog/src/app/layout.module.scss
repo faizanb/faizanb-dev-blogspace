@@ -1,0 +1,14 @@
+@import '~styles/theme.scss';
+@import '~styles/mixins.scss';
+
+.body {
+  background: $background-light;
+  color: $text-color-dark;
+}
+
+html[data-theme='dark'] {
+  .body {
+    background: $background-dark;
+    color: $text-color-light;
+  }
+}

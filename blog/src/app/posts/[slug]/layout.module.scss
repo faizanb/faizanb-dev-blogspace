@@ -1,17 +1,12 @@
 @import '~styles/theme.scss';
-
-.body {
-  background: $background-light;
-}
+@import '~styles/mixins.scss';
 
 .header {
   display: flex;
   align-items: center;
   gap: $space-sm;
   padding: $space-md 0;
-  border-bottom: 1px solid $primary-color-x-light;
   margin-bottom: $space-lg;
-  background: $background-light;
   .blogLogoContainer {
     a {
       display: flex;
@@ -25,7 +20,6 @@
       .heading {
         font-weight: $font-weight-bold;
         font-size: 1.3rem;
-        color: $primary-color-dark;
         flex: 1;
         text-align: center;
         letter-spacing: 0.02em;
@@ -34,5 +28,14 @@
   }
 
   .placeholder {
+  }
+}
+
+html[data-theme='dark'] {
+}
+
+// Desktop styles
+@include media-query($min-width: $breakpoint-lg) {
+  html[data-theme='dark'] {
   }
 }
