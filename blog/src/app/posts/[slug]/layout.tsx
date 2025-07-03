@@ -18,16 +18,19 @@ export default function PostLayout({
   return (
     <body className={`${layout_font.className} ${styles.body}`}>
       <header className={styles.header}>
-        <Link href="/" className="port-link">
-          <img
-            className={styles.siteLogo}
-            src={'/faiza_logo_portfolio.svg'}
-            alt={'Faiza Dev Blogspace Logo'}
-            width={50}
-          />
-        </Link>
-        <span className={styles.heading}>Faiza Dev Blogspace</span>
-        <span className={styles.placeholder} />
+        <div className={styles.blogLogoContainer}>
+          <Link href="/" className="port-link">
+            <img
+              className={styles.siteLogo}
+              src={'/faiza_logo_portfolio.svg'}
+              alt={'Faiza Dev Blogspace Logo'}
+              width={50}
+            />
+            <span className={styles.heading}>faizanb.dev</span>
+          </Link>
+        </div>
+        <span>{` > `}</span>
+        <span className={styles.placeholder}>Blog</span>
       </header>
       {children}
     </body>
