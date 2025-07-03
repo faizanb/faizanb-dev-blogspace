@@ -1,0 +1,37 @@
+@import '~styles/theme.scss';
+
+.body {
+  background: $background-light;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $space-md 0;
+  border-bottom: 1px solid $primary-color-x-light;
+  margin-bottom: $space-lg;
+  background: $background-light;
+
+  .siteLogo {
+    display: block;
+    width: 50px;
+    height: auto;
+    margin-right: $space-md;
+  }
+
+  .heading {
+    font-weight: $font-weight-bold;
+    font-size: 1.3rem;
+    color: $primary-color-dark;
+    flex: 1;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+
+  .placeholder {
+    width: 50px;
+    height: 1px;
+    display: block;
+  }
+}
