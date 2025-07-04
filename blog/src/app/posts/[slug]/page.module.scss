@@ -1,2 +1,25 @@
 @import '~styles/theme.scss';
 @import '~styles/mixins.scss';
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+}
+
+@include media-query($min-width: $breakpoint-lg) {
+  .postContainer {
+    flex-direction: row;
+    max-width: 1024px;
+    margin: 0 auto;
+    gap: $space-lg;
+    .leftSection {
+      width: 20%;
+      display: flex;
+      align-items: flex-start;
+    }
+    .rightSection {
+      width: 80%;
+    }
+  }
+}

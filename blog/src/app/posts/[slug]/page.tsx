@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { Button, DateLabel } from '@atomic-ui';
 import BlogPostContent from './BlogPostContent';
+import styles from './page.module.scss';
 
 async function getBlogPost(slug: string): Promise<any> {
   const res = await fetch(`${process.env.BASE_URL}/api/posts/${slug}`, {
@@ -53,16 +54,19 @@ export default async function BlogPostPage({
   if (!post) return notFound();
 
   return (
-    <div>
-      <section>
+    <div className={styles.postContainer}>
+      <section className={styles.leftSection}>
         <Button>View all posts</Button>
       </section>
-      <article>
+      <article className={styles.rightSection}>
         <h1>{data.title}</h1>
-        {data.publishedDate && <DateLabel dateString={data.publishedDate} />}
+        {data.publishedDate && (
+          <>
+            {'Posted on '} <DateLabel dateString={data.publishedDate} />
+          </>
+        )}
         <BlogPostContent content={data.content} />
       </article>
-      <section></section>
     </div>
   );
 }
