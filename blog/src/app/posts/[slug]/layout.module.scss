@@ -31,11 +31,11 @@
   }
 }
 
-html[data-theme='dark'] {
-}
+// html[data-theme='dark'] {
+// }
 
-// Desktop styles
-@include media-query($min-width: $breakpoint-lg) {
-  html[data-theme='dark'] {
-  }
-}
+// // Desktop styles
+// @include media-query($min-width: $breakpoint-lg) {
+//   html[data-theme='dark'] {
+//   }
+// }

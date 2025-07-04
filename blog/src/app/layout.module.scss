@@ -3,6 +3,7 @@
 .body {
   background: $background-light;
   color: $text-color-dark;
+  margin: $space-md;
 }
 
 html[data-theme='dark'] {

@@ -58,7 +58,7 @@ export default async function BlogPostPage({
       <section className={styles.leftSection}>
         <Button>View all posts</Button>
       </section>
-      <article className={styles.rightSection}>
+      <article className={styles.contentSection}>
         <PageTitle>{data.title}</PageTitle>
         {data.publishedDate && (
           <DateLabel
