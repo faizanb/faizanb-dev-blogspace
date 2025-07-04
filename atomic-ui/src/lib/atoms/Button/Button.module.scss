@@ -1,25 +1,44 @@
 @import '~styles/theme.scss';
 
 .button {
+  display: flex;
+  align-items: center;
+  font-size: $font-size-sm;
   padding: $space-sm $space-md;
+  background-color: unset;
+  color: $text-color-dark;
+  border: none;
+  border-radius: inherit;
+  border-bottom: 1px solid $text-color-dark;
+  cursor: pointer;
+  .icon {
+    width: $font-size-base;
+    margin-right: 0.5rem;
+  }
+}
+.button.withBg {
+  border-radius: $border-radius-8;
   background-color: $primary-color-medium;
   color: $text-color-light;
   border: none;
-  border-radius: $border-radius-8;
-  cursor: pointer;
 
   &:hover {
     background-color: $primary-color-dark;
   }
 }
 
-@media (prefers-color-scheme: dark) {
+html[data-theme='dark'] {
   .button {
-    background-color: $primary-color-x-light;
+    color: $text-color-light;
+    border-bottom: 1px solid $text-color-light;
+  }
+  .button.withBg {
+    background-color: $primary-color-light;
     color: $text-color-dark;
+    border: none;
 
     &:hover {
-      background-color: $primary-color-light;
+      background-color: $primary-color-x-light;
     }
   }
 }

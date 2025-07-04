@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { PageTitle, Button, DateLabel } from '@atomic-ui';
 import BlogPostContent from './BlogPostContent';
 import styles from './page.module.scss';
@@ -56,7 +57,9 @@ export default async function BlogPostPage({
   return (
     <div className={styles.postContainer}>
       <section className={styles.leftSection}>
-        <Button>View all posts</Button>
+        <Button showIcon={true} icon={faArrowLeft}>
+          View all posts
+        </Button>
       </section>
       <article className={styles.contentSection}>
         <PageTitle>{data.title}</PageTitle>

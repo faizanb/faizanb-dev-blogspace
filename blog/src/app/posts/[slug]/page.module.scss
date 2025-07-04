@@ -19,6 +19,7 @@
     margin: 0 auto;
     gap: $space-lg;
     .leftSection {
+      margin-left: $space-md;
       width: 20%;
       display: flex;
       align-items: flex-start;

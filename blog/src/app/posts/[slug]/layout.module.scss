@@ -6,7 +6,6 @@
   align-items: center;
   gap: $space-sm;
   padding: $space-md 0;
-  margin-bottom: $space-lg;
   .blogLogoContainer {
     a {
       display: flex;
@@ -31,11 +30,14 @@
   }
 }
 
-// html[data-theme='dark'] {
-// }
+html[data-theme='dark'] {
+}
 
-// // Desktop styles
-// @include media-query($min-width: $breakpoint-lg) {
-//   html[data-theme='dark'] {
-//   }
-// }
+// Desktop styles
+@include media-query($min-width: $breakpoint-lg) {
+  .heading {
+    margin-bottom: $space-lg;
+  }
+  html[data-theme='dark'] {
+  }
+}
