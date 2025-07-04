@@ -1,7 +1,7 @@
 'use client';
 
 import { useTheme } from 'next-themes';
-import { Heading, CodeBlock } from '@atomic-ui';
+import { Heading, Paragraph, CodeBlock } from '@atomic-ui';
 
 function renderContentBlock(block: any, index: number, theme: string) {
   switch (block.__component) {
@@ -10,25 +10,20 @@ function renderContentBlock(block: any, index: number, theme: string) {
         <Heading key={index} text={block.text} type={block.level as any} />
       );
     case 'blocks.paragraph':
+      let paragraphContent;
       if (block.type === 'html') {
-        const html = block.text
+        paragraphContent = block.text
           .map((t: any) => (t.children?.[0]?.text ? t.children[0].text : ''))
           .join('');
-        return (
-          <div
-            key={index}
-            style={{ margin: '1em 0' }}
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-        );
       }
       if (block.type === 'plainText') {
-        const text = block.text
+        paragraphContent = block.text
           .map((t: any) => (t.children?.[0]?.text ? t.children[0].text : ''))
           .join('');
-        return <p key={index}>{text}</p>;
       }
-      return null;
+      return (
+        <Paragraph key={index} content={paragraphContent} type={block.type} />
+      );
     case 'blocks.code-snippet':
       return (
         <CodeBlock

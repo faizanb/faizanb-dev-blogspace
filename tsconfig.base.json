@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@atomic-ui": ["dist/atomic-ui/src/index.js"]
+      "@atomic-ui": ["dist/atomic-ui/src/index.js"],
+      "@styles/*": ["styles/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
