@@ -61,9 +61,10 @@ export default async function BlogPostPage({
       <article className={styles.rightSection}>
         <PageTitle>{data.title}</PageTitle>
         {data.publishedDate && (
-          <>
-            {'Posted on '} <DateLabel dateString={data.publishedDate} />
-          </>
+          <DateLabel
+            labelPrefix={'Posted on'}
+            dateString={data.publishedDate}
+          />
         )}
         <BlogPostContent content={data.content} />
       </article>
