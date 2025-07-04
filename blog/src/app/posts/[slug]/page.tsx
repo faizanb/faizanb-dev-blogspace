@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
-import { Button, DateLabel } from '@atomic-ui';
+import { PageTitle, Button, DateLabel } from '@atomic-ui';
 import BlogPostContent from './BlogPostContent';
 import styles from './page.module.scss';
 
@@ -59,7 +59,7 @@ export default async function BlogPostPage({
         <Button>View all posts</Button>
       </section>
       <article className={styles.rightSection}>
-        <h1>{data.title}</h1>
+        <PageTitle>{data.title}</PageTitle>
         {data.publishedDate && (
           <>
             {'Posted on '} <DateLabel dateString={data.publishedDate} />
