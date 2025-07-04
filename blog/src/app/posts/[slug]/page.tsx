@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
+import { Button } from '@atomic-ui';
 import BlogPostContent from './BlogPostContent';
 
 async function getBlogPost(slug: string): Promise<any> {
@@ -52,9 +53,24 @@ export default async function BlogPostPage({
   if (!post) return notFound();
 
   return (
-    <article>
-      <h1>{data.title}</h1>
-      <BlogPostContent content={data.content} />
-    </article>
+    <div>
+      <section>
+        <Button>View all posts</Button>
+      </section>
+      <article>
+        <h1>{data.title}</h1>
+        {data.publishedDate && (
+          <div>
+            {new Date(data.publishedDate).toLocaleDateString(undefined, {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric',
+            })}
+          </div>
+        )}
+        <BlogPostContent content={data.content} />
+      </article>
+      <section></section>
+    </div>
   );
 }
