@@ -15,7 +15,7 @@
 @include media-query($min-width: $breakpoint-lg) {
   .postContainer {
     flex-direction: row;
-    max-width: 1024px;
+    max-width: $breakpoint-lg;
     margin: 0 auto;
     gap: $space-lg;
     .leftSection {

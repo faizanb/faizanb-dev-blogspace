@@ -36,6 +36,8 @@ html[data-theme='dark'] {
 // Desktop styles
 @include media-query($min-width: $breakpoint-lg) {
   .header {
+    max-width: $breakpoint-lg;
+    margin: 0 auto;
     margin-bottom: $space-lg;
   }
   html[data-theme='dark'] {
