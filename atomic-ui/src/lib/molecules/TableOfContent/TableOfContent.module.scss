@@ -2,13 +2,15 @@
 @import '~styles/mixins.scss';
 
 .tocNav {
-  border-radius: $border-radius-4;
+  border-radius: $border-radius-8;
+  border: 1px solid $text-color-dark;
   padding: $space-sm;
+  padding-left: $space-md;
   margin-top: $space-md;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   .title {
-    margin-bottom: $space-sm;
-    font-size: $font-size-lg;
+    margin: $space-sm 0;
+    font-size: $font-size-xl;
     font-weight: $font-weight-bold;
     color: $primary-color-dark;
   }
@@ -17,7 +19,7 @@
     padding: 0;
     margin: 0;
     .tocItem {
-      margin-bottom: $space-xs;
+      line-height: 2;
     }
 
     .tocLink {
@@ -31,7 +33,6 @@
     }
     .levelH2 {
       margin-left: 0;
-      font-weight: $font-weight-bold;
     }
     .levelH3 {
       margin-left: $space-sm;
@@ -46,6 +47,7 @@
 
 html[data-theme='dark'] {
   .tocNav {
+    border: 1px solid $text-color-light;
     .tocList {
       .tocLink {
         color: $text-color-light;

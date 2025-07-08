@@ -14,7 +14,7 @@ const TableOfContent = ({ toc }: { toc: TocItem[] }) => (
       {toc.map((item) => (
         <li
           key={item.id}
-          className={styles[`level${item.level}`] || styles.tocItem}
+          className={`${styles[`level${item.level}`]} ${styles.tocItem}`}
         >
           <a href={`#${item.anchor}`} className={styles.tocLink}>
             {item.text}
