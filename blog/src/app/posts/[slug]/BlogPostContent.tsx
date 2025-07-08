@@ -3,11 +3,23 @@
 import { useTheme } from 'next-themes';
 import { Heading, Paragraph, CodeBlock } from '@atomic-ui';
 
+function getAnchor(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/[^\w]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 function renderContentBlock(block: any, index: number, theme: string) {
   switch (block.__component) {
     case 'blocks.heading':
       return (
-        <Heading key={index} text={block.text} type={block.level as any} />
+        <Heading
+          key={index}
+          text={block.text}
+          type={block.level as any}
+          anchor={getAnchor(block.text)}
+        />
       );
     case 'blocks.paragraph':
       let paragraphContent;
