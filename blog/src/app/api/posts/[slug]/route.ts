@@ -16,5 +16,22 @@ export async function GET(
       { status: response.status }
     );
   }
-  return NextResponse.json(response.data);
+
+  // Process the response to include a table of contents (TOC)
+  const post = response.data?.data?.[0];
+  const postContent = post?.content || [];
+  const toc = postContent
+    .filter((block: any) => block.__component === 'blocks.heading')
+    .map((block: any) => ({
+      id: block.id,
+      text: block.text,
+      level: block.level,
+      // Generate an anchor slug for linking to the heading
+      anchor: block.text
+        .toLowerCase()
+        .replace(/[^\w]+/g, '-')
+        .replace(/^-+|-+$/g, ''),
+    }));
+
+  return NextResponse.json({ ...post, toc });
 }
