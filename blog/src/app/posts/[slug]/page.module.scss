@@ -22,7 +22,7 @@
     margin: 0 auto;
     gap: $space-lg;
     .leftSection {
-      width: 22%;
+      width: calc(0.35 * $breakpoint-lg);
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -31,7 +31,7 @@
     }
     .contentSection {
       width: 65%;
-      margin-left: 35%;
+      margin-left: calc((0.35 * $breakpoint-lg) + $space-lg);
     }
   }
 }
