@@ -51,7 +51,7 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const post = await getBlogPost(slug);
 
-  const data = post?.data?.[0];
+  const data = post;
   if (!post) return notFound();
 
   return (
@@ -60,7 +60,7 @@ export default async function BlogPostPage({
         <Button showIcon={true} icon={faArrowLeft}>
           View all posts
         </Button>
-        {data.toc && data.toc.length > 0 && <TableOfContent toc={data.toc} />}
+        {data?.toc && data.toc?.length > 0 && <TableOfContent toc={data.toc} />}
       </section>
       <article className={styles.contentSection}>
         <PageTitle>{data.title}</PageTitle>

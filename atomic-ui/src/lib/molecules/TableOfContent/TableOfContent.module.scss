@@ -1,13 +1,55 @@
 @import '~styles/theme.scss';
 @import '~styles/mixins.scss';
 
-.title {
-  margin: 0;
-  font-size: $font-size-xxl;
+.tocNav {
+  border-radius: $border-radius-4;
+  padding: $space-sm;
+  margin-top: $space-md;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  .title {
+    margin-bottom: $space-sm;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    color: $primary-color-dark;
+  }
+  .tocList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    .tocItem {
+      margin-bottom: $space-xs;
+    }
+
+    .tocLink {
+      color: $text-color-dark;
+      text-decoration: none;
+      font-size: $font-size-base;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    .levelH2 {
+      margin-left: 0;
+      font-weight: $font-weight-bold;
+    }
+    .levelH3 {
+      margin-left: $space-sm;
+      font-size: $font-size-sm;
+    }
+    .levelH4 {
+      margin-left: calc(2 * $space-sm);
+      font-size: $font-size-sm;
+    }
+  }
 }
 
-@include media-query($min-width: $breakpoint-lg) {
-  .title {
-    font-size: $font-size-xxxl;
+html[data-theme='dark'] {
+  .tocNav {
+    .tocList {
+      .tocLink {
+        color: $text-color-light;
+      }
+    }
   }
 }

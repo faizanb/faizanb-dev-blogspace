@@ -9,7 +9,7 @@ type TocItem = {
 
 const TableOfContent = ({ toc }: { toc: TocItem[] }) => (
   <nav className={styles.tocNav} aria-label="Table of Contents">
-    <h2 className={styles.title}>Table of Contents</h2>
+    <h3 className={styles.title}>Table of Contents</h3>
     <ul className={styles.tocList}>
       {toc.map((item) => (
         <li
