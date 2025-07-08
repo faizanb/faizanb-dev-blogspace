@@ -1,0 +1,13 @@
+@import '~styles/theme.scss';
+@import '~styles/mixins.scss';
+
+.title {
+  margin: 0;
+  font-size: $font-size-xxl;
+}
+
+@include media-query($min-width: $breakpoint-lg) {
+  .title {
+    font-size: $font-size-xxxl;
+  }
+}
