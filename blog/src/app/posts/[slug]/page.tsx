@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { PageTitle, Button, DateLabel } from '@atomic-ui';
+import { PageTitle, Button, DateLabel, TableOfContent } from '@atomic-ui';
 import BlogPostContent from './BlogPostContent';
 import styles from './page.module.scss';
 
@@ -60,6 +60,7 @@ export default async function BlogPostPage({
         <Button showIcon={true} icon={faArrowLeft}>
           View all posts
         </Button>
+        {data.toc && data.toc.length > 0 && <TableOfContent toc={data.toc} />}
       </section>
       <article className={styles.contentSection}>
         <PageTitle>{data.title}</PageTitle>
