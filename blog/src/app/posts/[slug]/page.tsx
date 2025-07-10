@@ -1,7 +1,13 @@
 import { notFound } from 'next/navigation';
 import { Metadata } from 'next';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { PageTitle, Button, DateLabel, TableOfContent } from '@atomic-ui';
+import {
+  PageTitle,
+  Button,
+  DateLabel,
+  TableOfContent,
+  FeaturedImage,
+} from '@atomic-ui';
 import BlogPostContent from './BlogPostContent';
 import styles from './page.module.scss';
 
@@ -68,6 +74,11 @@ export default async function BlogPostPage({
           <DateLabel
             labelPrefix={'Posted on'}
             dateString={data.publishedDate}
+          />
+        )}
+        {data.featuredImage?.formats?.large && (
+          <FeaturedImage
+            imgSrc={`${process.env.NX_STRAPI_BASE_URL}${data.featuredImage.formats.large.url}`}
           />
         )}
         <BlogPostContent content={data.content} />
