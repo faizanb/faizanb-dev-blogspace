@@ -1,0 +1,9 @@
+@import '~styles/theme.scss';
+@import '~styles/mixins.scss';
+
+.featuredImage {
+  width: 100%;
+  height: auto;
+  border-radius: $radius-md;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
