@@ -1,5 +1,33 @@
 @import '~styles/theme.scss';
 @import '~styles/mixins.scss';
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  .socialLinksSection {
+    display: flex;
+    align-items: center;
+    margin-bottom: $space-md;
+    gap: $space-lg;
+    justify-content: center;
+    .socialLink {
+      display: flex;
+      width: $space-lg;
+      height: $space-lg;
+    }
+  }
+  .copyRight {
+    text-align: center;
+    font-size: $font-size-sm;
+    color: $text-color-light;
+    margin: 0;
+  }
+}
+
 html[data-theme='dark'] {
+  .footer {
+    .copyRight {
+      color: $text-color-dark;
+    }
+  }
 }

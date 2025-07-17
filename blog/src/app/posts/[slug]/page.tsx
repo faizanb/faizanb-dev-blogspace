@@ -7,6 +7,7 @@ import {
   DateLabel,
   TableOfContent,
   FeaturedImage,
+  Footer,
 } from '@atomic-ui';
 import BlogPostContent from './BlogPostContent';
 import styles from './page.module.scss';
@@ -83,6 +84,7 @@ export default async function BlogPostPage({
         )}
         <BlogPostContent content={data.content} />
       </article>
+      <Footer footerArray={data.socialLinks} />
     </div>
   );
 }
