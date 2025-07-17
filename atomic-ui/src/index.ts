@@ -7,5 +7,6 @@ export { default as FeaturedImage } from './lib/atoms/FeaturedImage/FeaturedImag
 
 export { default as TableOfContent } from './lib/molecules/TableOfContent/TableOfContent';
 export { default as Footer } from './lib/molecules/Footer/Footer';
+export { default as Badges } from './lib/molecules/Badges/Badges';
 
 export { default as CodeBlock } from './lib/organisms/CodeBlock/CodeBlock';

@@ -5,6 +5,7 @@ import {
   PageTitle,
   Button,
   DateLabel,
+  Badges,
   TableOfContent,
   FeaturedImage,
   Footer,
@@ -83,6 +84,7 @@ export default async function BlogPostPage({
               }
             />
           )}
+          <Badges badges={data.tags} />
           {data.featuredImage?.formats?.large && (
             <FeaturedImage
               imgSrc={`${process.env.NX_STRAPI_BASE_URL}${data.featuredImage.formats.large.url}`}

@@ -1,0 +1,18 @@
+@import '~styles/theme.scss';
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.badgeItem {
+  background-color: $primary-color-dark;
+  color: $text-color-light;
+  padding: $space-xs $space-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-light;
+  border-radius: $border-radius-16;
+  letter-spacing: 0.5px;
+  user-select: none;
+}
