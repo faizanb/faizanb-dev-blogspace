@@ -1,5 +1,9 @@
 @import '~styles/theme.scss';
 @import '~styles/mixins.scss';
+@import '~styles/functions.scss';
+
+$button-size: $space-lg;
+$icon-size: calc($space-md + $space-sm);
 
 .header {
   display: flex;
@@ -46,10 +50,17 @@
       text-decoration: underline;
     }
   }
+
   .themeToggleBtn {
     all: unset;
     cursor: pointer;
-    $icon-size: calc($space-md + $space-sm);
+    width: $button-size;
+    height: $button-size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: add-alpha($primary-color-dark, 0.4);
+    border-radius: 50%;
     .themeIcon {
       width: $icon-size;
       height: $icon-size;
