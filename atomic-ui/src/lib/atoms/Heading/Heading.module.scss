@@ -18,7 +18,7 @@
   font-size: $font-size-sm;
 }
 
-@media (prefers-color-scheme: dark) {
+html[data-theme='dark'] {
   .heading {
     color: $text-color-light;
   }

@@ -4,6 +4,7 @@
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: $space-sm;
   padding: $space-md;
   position: fixed;
@@ -45,6 +46,15 @@
       text-decoration: underline;
     }
   }
+  .themeToggleBtn {
+    all: unset;
+    $icon-size: calc($space-md + $space-sm);
+    .themeIcon {
+      width: $icon-size;
+      height: $icon-size;
+      color: $primary-color-dark;
+    }
+  }
 }
 
 .header.scrolled {
@@ -69,6 +79,11 @@
       color: $text-color-light;
     }
   }
+  .themeToggleBtn {
+    .themeIcon {
+      filter: brightness(0) invert(1);
+    }
+  }
 }
 
 html[data-theme='dark'] {
@@ -81,6 +96,12 @@ html[data-theme='dark'] {
         color: $text-color-light;
       }
     }
+  }
+}
+
+@include media-query($min-width: $breakpoint-md, $max-width: $breakpoint-lg) {
+  .header {
+    padding: $space-md $space-xl;
   }
 }
 

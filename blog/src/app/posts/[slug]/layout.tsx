@@ -2,6 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { useTheme } from 'next-themes';
 import styles from './layout.module.scss';
 
 export default function PostLayout({
@@ -34,6 +37,8 @@ export default function PostLayout({
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const { theme, setTheme } = useTheme();
+
   return (
     <>
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
@@ -50,6 +55,16 @@ export default function PostLayout({
           <span className={styles.divider}></span>
           <span className={styles.placeholder}>Blog</span>
         </div>
+        <button
+          className={styles.themeToggleBtn}
+          aria-label="Toggle theme"
+          onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+        >
+          <FontAwesomeIcon
+            icon={theme === 'dark' ? faMoon : faSun}
+            className={styles.themeIcon}
+          />
+        </button>
       </header>
       {children}
     </>
