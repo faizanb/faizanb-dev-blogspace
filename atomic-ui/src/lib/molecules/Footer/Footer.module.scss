@@ -17,6 +17,7 @@
       display: flex;
       width: $space-lg;
       height: $space-lg;
+      color: $primary-color-dark;
     }
   }
   .copyRight {
@@ -29,6 +30,11 @@
 
 html[data-theme='dark'] {
   .footer {
+    .socialLinksSection {
+      .socialLink {
+        color: $text-color-light;
+      }
+    }
     .copyRight {
       color: $text-color-light;
     }
