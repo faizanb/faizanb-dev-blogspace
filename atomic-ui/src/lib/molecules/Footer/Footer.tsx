@@ -34,7 +34,10 @@ const Footer = ({
             className={styles.socialLink}
             aria-label={`${content.platform} Profile`}
           >
-            <FontAwesomeIcon icon={socialIconMap[content.platform]} />
+            <FontAwesomeIcon
+              icon={socialIconMap[content.platform]}
+              className={styles.socialIcon}
+            />
           </a>
         ))}
       </div>

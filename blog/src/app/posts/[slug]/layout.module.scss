@@ -48,6 +48,7 @@
   }
   .themeToggleBtn {
     all: unset;
+    cursor: pointer;
     $icon-size: calc($space-md + $space-sm);
     .themeIcon {
       width: $icon-size;
