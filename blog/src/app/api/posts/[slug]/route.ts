@@ -20,6 +20,7 @@ export async function GET(
   // Process the response to include a table of contents (TOC)
   const post = response.data?.data?.[0];
   const postContent = post?.content || [];
+
   const toc = postContent
     .filter((block: any) => block.__component === 'blocks.heading')
     .map((block: any) => ({
@@ -33,5 +34,28 @@ export async function GET(
         .replace(/^-+|-+$/g, ''),
     }));
 
-  return NextResponse.json({ ...post, toc });
+  // Calculate reading time (average reading speed: 200 words/minute)
+  const getTextFromBlock = (block: any) => {
+    if (block.__component === 'blocks.paragraph') {
+      if (block.type === 'html') {
+        return block.text
+          .map((t: any) => t.children?.[0]?.text || '')
+          .join(' ');
+      }
+      if (block.type === 'plainText') {
+        return block.text
+          .map((t: any) => t.children?.[0]?.text || '')
+          .join(' ');
+      }
+    }
+    if (block.__component === 'blocks.heading') {
+      return block.text;
+    }
+    return '';
+  };
+
+  const allText = postContent.map(getTextFromBlock).join(' ');
+  const wordCount = allText.trim().split(/\s+/).length;
+  const minutesToRead = Math.max(1, Math.round(wordCount / 200));
+  return NextResponse.json({ ...post, toc, minutesToRead });
 }

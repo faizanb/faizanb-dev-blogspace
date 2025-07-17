@@ -78,6 +78,9 @@ export default async function BlogPostPage({
             <DateLabel
               labelPrefix={'Posted on'}
               dateString={data.publishedDate}
+              minutesToReadLabel={
+                data.minutesToRead ? `${data.minutesToRead} mins read` : ''
+              }
             />
           )}
           {data.featuredImage?.formats?.large && (
