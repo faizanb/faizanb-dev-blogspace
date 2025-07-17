@@ -7,13 +7,15 @@
   padding: $space-sm $space-md;
   background-color: unset;
   color: $text-color-dark;
-  border: none;
-  border-radius: inherit;
-  border-bottom: 1px solid $text-color-dark;
+  border-radius: $border-radius-8;
+  border: 1px solid $text-color-dark;
   cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  margin-top: $space-md;
   .icon {
     width: $font-size-base;
-    margin-right: 0.5rem;
+    margin-right: $space-sm;
   }
 }
 .button.withBg {
@@ -30,7 +32,7 @@
 html[data-theme='dark'] {
   .button {
     color: $text-color-light;
-    border-bottom: 1px solid $text-color-light;
+    border: 1px solid $text-color-light;
   }
   .button.withBg {
     background-color: $primary-color-light;

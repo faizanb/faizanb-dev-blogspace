@@ -65,12 +65,12 @@ export default async function BlogPostPage({
     <>
       <div className={styles.postContainer}>
         <section className={styles.leftSection}>
-          <Button showIcon={true} icon={faArrowLeft}>
-            View all posts
-          </Button>
           {data?.toc && data.toc?.length > 0 && (
             <TableOfContent toc={data.toc} />
           )}
+          <Button showIcon={true} icon={faArrowLeft}>
+            View other posts
+          </Button>
         </section>
         <article className={styles.contentSection}>
           <PageTitle>{data.title}</PageTitle>
