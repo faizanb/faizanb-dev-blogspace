@@ -6,7 +6,7 @@
   flex-direction: column;
   padding-top: calc($space-md + $space-sm);
   margin-top: calc($space-lg + $space-sm);
-  border-top: 2px solid $primary-color-dark;
+  border-top: 4px solid $primary-color-dark;
   margin-bottom: $space-lg;
   .socialLinksSection {
     display: flex;
@@ -16,7 +16,7 @@
     justify-content: center;
     .socialLink {
       display: flex;
-      color: $primary-color-dark;
+      color: $text-color-dark;
       .socialIcon {
         width: $space-lg;
         height: $space-lg;
