@@ -13,26 +13,37 @@
   background: transparent;
   transition: all 0.3s ease;
   .blogLogoContainer {
+    display: flex;
+    gap: $space-sm;
+    align-items: center;
     a {
       display: flex;
       align-items: center;
       gap: $space-sm;
+      text-decoration: none;
+      color: $primary-color-dark;
       .siteLogo {
         width: 2.5rem;
         height: 2.5rem;
       }
-
       .heading {
         font-weight: $font-weight-bold;
         font-size: 1.3rem;
         flex: 1;
         text-align: center;
-        letter-spacing: 0.02em;
       }
     }
-  }
-
-  .placeholder {
+    .divider {
+      height: $space-lg;
+      margin: $space-sm 0;
+      border-left: 2px solid $text-color-dark;
+    }
+    .placeholder {
+      color: $text-color-dark;
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -41,18 +52,42 @@
   border-bottom-left-radius: $border-radius-12;
   border-bottom-right-radius: $border-radius-12;
   box-shadow: $box-shadow-medium;
+  .blogLogoContainer {
+    a {
+      color: $text-color-light;
+      .siteLogo {
+        filter: brightness(0) invert(1);
+      }
+      .heading {
+        color: $text-color-light;
+      }
+    }
+    .divider {
+      border-left: 2px solid $text-color-light;
+    }
+    .placeholder {
+      color: $text-color-light;
+    }
+  }
 }
 
 html[data-theme='dark'] {
+  .header {
+    .blogLogoContainer {
+      .divider {
+        border-left: 2px solid $text-color-light;
+      }
+      .placeholder {
+        color: $text-color-light;
+      }
+    }
+  }
 }
 
-// Desktop styles
 @include media-query($min-width: $breakpoint-lg) {
   .header {
     max-width: $breakpoint-lg;
     margin: 0 auto;
     margin-bottom: $space-lg;
-  }
-  html[data-theme='dark'] {
   }
 }

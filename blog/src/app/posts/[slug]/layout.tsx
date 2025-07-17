@@ -38,18 +38,18 @@ export default function PostLayout({
     <>
       <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
         <div className={styles.blogLogoContainer}>
-          <Link href="/" className="port-link">
+          <Link href="/">
             <img
               className={styles.siteLogo}
-              src={`/faiza_logo_portfolio${scrolled ? '_light' : ''}.svg`}
+              src={'/faiza_logo_portfolio.svg'}
               alt={'Faiza Dev Blogspace Logo'}
               width={50}
             />
             <span className={styles.heading}>faizanb.dev</span>
           </Link>
+          <span className={styles.divider}></span>
+          <span className={styles.placeholder}>Blog</span>
         </div>
-        <span>{` | `}</span>
-        <span className={styles.placeholder}>Blog</span>
       </header>
       {children}
     </>
