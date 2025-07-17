@@ -20,8 +20,8 @@ export default function CodeBlock({
   code,
   lang,
   isDark = false,
-  themeDark = 'github-dark',
-  themeLight = 'github-light',
+  themeDark = 'vitesse-black',
+  themeLight = 'vitesse-light',
 }: Props) {
   const [html, setHtml] = useState<string>('');
 
