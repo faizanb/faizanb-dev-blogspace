@@ -14,6 +14,12 @@ html[data-theme='dark'] {
   }
 }
 
+@include media-query($min-width: $breakpoint-md) {
+  .body {
+    margin: $space-md $space-xl;
+  }
+}
+
 @include media-query($min-width: $breakpoint-lg) {
   .body {
     max-width: $breakpoint-lg;
