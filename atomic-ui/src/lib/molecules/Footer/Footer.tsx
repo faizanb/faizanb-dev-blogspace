@@ -19,7 +19,7 @@ const socialIconMap: Record<string, any> = {
 const Footer = ({
   footerArray,
 }: {
-  footerArray: Array<{ link: string; platform: string }>;
+  footerArray: Array<{ url: string; platform: string }>;
 }) => {
   const copyrightTxt = '© # Faiza N B. All rights reserved.';
   return (
@@ -28,7 +28,7 @@ const Footer = ({
         {footerArray.map((content, index) => (
           <a
             key={index}
-            href={content.link}
+            href={content.url}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.socialLink}
