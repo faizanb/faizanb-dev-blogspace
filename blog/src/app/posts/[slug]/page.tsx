@@ -62,29 +62,33 @@ export default async function BlogPostPage({
   if (!post) return notFound();
 
   return (
-    <div className={styles.postContainer}>
-      <section className={styles.leftSection}>
-        <Button showIcon={true} icon={faArrowLeft}>
-          View all posts
-        </Button>
-        {data?.toc && data.toc?.length > 0 && <TableOfContent toc={data.toc} />}
-      </section>
-      <article className={styles.contentSection}>
-        <PageTitle>{data.title}</PageTitle>
-        {data.publishedDate && (
-          <DateLabel
-            labelPrefix={'Posted on'}
-            dateString={data.publishedDate}
-          />
-        )}
-        {data.featuredImage?.formats?.large && (
-          <FeaturedImage
-            imgSrc={`${process.env.NX_STRAPI_BASE_URL}${data.featuredImage.formats.large.url}`}
-          />
-        )}
-        <BlogPostContent content={data.content} />
-      </article>
+    <>
+      <div className={styles.postContainer}>
+        <section className={styles.leftSection}>
+          <Button showIcon={true} icon={faArrowLeft}>
+            View all posts
+          </Button>
+          {data?.toc && data.toc?.length > 0 && (
+            <TableOfContent toc={data.toc} />
+          )}
+        </section>
+        <article className={styles.contentSection}>
+          <PageTitle>{data.title}</PageTitle>
+          {data.publishedDate && (
+            <DateLabel
+              labelPrefix={'Posted on'}
+              dateString={data.publishedDate}
+            />
+          )}
+          {data.featuredImage?.formats?.large && (
+            <FeaturedImage
+              imgSrc={`${process.env.NX_STRAPI_BASE_URL}${data.featuredImage.formats.large.url}`}
+            />
+          )}
+          <BlogPostContent content={data.content} />
+        </article>
+      </div>
       <Footer footerArray={data.socialLinks} />
-    </div>
+    </>
   );
 }

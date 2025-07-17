@@ -4,6 +4,9 @@
 .footer {
   display: flex;
   flex-direction: column;
+  padding-top: calc($space-md + $space-sm);
+  margin-top: calc($space-lg + $space-sm);
+  border-top: 2px solid $primary-color-dark;
   .socialLinksSection {
     display: flex;
     align-items: center;
@@ -19,7 +22,7 @@
   .copyRight {
     text-align: center;
     font-size: $font-size-sm;
-    color: $text-color-light;
+    color: $text-color-dark;
     margin: 0;
   }
 }
@@ -27,7 +30,7 @@
 html[data-theme='dark'] {
   .footer {
     .copyRight {
-      color: $text-color-dark;
+      color: $text-color-light;
     }
   }
 }
