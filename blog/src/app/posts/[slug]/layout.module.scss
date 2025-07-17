@@ -5,7 +5,13 @@
   display: flex;
   align-items: center;
   gap: $space-sm;
-  padding: $space-md 0;
+  padding: $space-md;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  transition: all 0.3s ease;
   .blogLogoContainer {
     a {
       display: flex;
@@ -28,6 +34,13 @@
 
   .placeholder {
   }
+}
+
+.header.scrolled {
+  background: $primary-color-dark;
+  border-bottom-left-radius: $border-radius-12;
+  border-bottom-right-radius: $border-radius-12;
+  box-shadow: $box-shadow-medium;
 }
 
 html[data-theme='dark'] {

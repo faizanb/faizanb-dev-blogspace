@@ -1,4 +1,5 @@
 @import '~styles/theme.scss';
+@import '~styles/mixins.scss';
 
 .body {
   background: $background-light;
@@ -10,5 +11,12 @@ html[data-theme='dark'] {
   .body {
     background: $background-dark;
     color: $text-color-light;
+  }
+}
+
+@include media-query($min-width: $breakpoint-lg) {
+  .body {
+    max-width: $breakpoint-lg;
+    margin: 0 auto;
   }
 }

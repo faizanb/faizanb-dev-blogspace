@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   gap: $space-md;
+  margin-top: calc($space-xl + $space-md);
   .contentSection {
     display: flex;
     flex-direction: column;
@@ -16,13 +17,15 @@
 }
 
 @include media-query($min-width: $breakpoint-lg) {
+  $width: calc(0.35 * $breakpoint-lg);
+  $spacing: calc($width + $space-lg);
+
   .postContainer {
     flex-direction: row;
-    max-width: $breakpoint-lg;
-    margin: 0 auto;
     gap: $space-lg;
+    width: 100%;
     .leftSection {
-      width: calc(0.35 * $breakpoint-lg);
+      width: $width;
       height: 100vh;
       display: flex;
       flex-direction: column;
@@ -30,8 +33,8 @@
       position: fixed;
     }
     .contentSection {
-      width: 65%;
-      margin-left: calc((0.35 * $breakpoint-lg) + $space-lg);
+      width: calc(100% - $spacing);
+      margin-left: $spacing;
     }
   }
 }
