@@ -48,4 +48,5 @@ Thumbs.db
 out
 
 .env
+.env.production
 package-lock.json

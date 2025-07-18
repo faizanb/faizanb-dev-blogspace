@@ -22,12 +22,8 @@ async function getBlogPost(slug: string): Promise<any> {
   return res.json();
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata({ params }: any): Promise<Metadata> {
+  const { slug } = params;
   const apiRes = await getBlogPost(slug);
   if (!apiRes || !apiRes.data || !apiRes.data[0]) return {};
 
@@ -51,12 +47,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = await params;
+export default async function BlogPostPage({ params }: any) {
+  const { slug } = params;
   const post = await getBlogPost(slug);
 
   const data = post;

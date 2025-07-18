@@ -1,6 +1,8 @@
 import { PageTitle, PostBlurb, Footer } from '@atomic-ui';
 import styles from './page.module.scss';
 
+export const dynamic = 'force-dynamic';
+
 interface BlogPost {
   id: string;
   slug: string;

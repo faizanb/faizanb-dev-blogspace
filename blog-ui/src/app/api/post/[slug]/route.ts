@@ -3,9 +3,9 @@ import handler from '../../apiHandler';
 
 export async function GET(
   request: Request,
-  { params }: { params: { slug: string } }
+  context: { params: any }
 ): Promise<any> {
-  const { slug } = await params;
+  const { slug } = context.params;
   const response = await handler({
     method: 'GET',
     query: { endpoint: `/posts?filters[slug][$eq]=${slug}&populate=*` },
