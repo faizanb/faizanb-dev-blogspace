@@ -1,5 +1,4 @@
-import { PageTitle, PostBlurb } from '@atomic-ui';
-import Link from 'next/link';
+import { PageTitle, PostBlurb, Footer } from '@atomic-ui';
 import styles from './page.module.scss';
 
 interface BlogPost {
@@ -39,6 +38,7 @@ export default async function BlogListPage() {
           />
         ))}
       </div>
+      <Footer footerArray={posts[0].socialLinks} />
     </div>
   );
 }
