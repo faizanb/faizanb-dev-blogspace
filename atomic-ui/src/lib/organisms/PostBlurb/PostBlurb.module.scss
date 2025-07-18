@@ -1,0 +1,31 @@
+@import '~styles/theme.scss';
+@import '~styles/mixins.scss';
+
+.postBlurbCard {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  border-radius: $border-radius-8;
+  border: 1px solid $text-color-dark;
+  .postBlurbContent {
+    .postBlurbTitle {
+    }
+  }
+}
+
+@media (min-width: $breakpoint-md) {
+  .postBlurbCard {
+    flex-direction: row;
+    gap: $space-md;
+  }
+}
+
+html[data-theme='dark'] {
+  .postBlurbCard {
+    border: 1px solid $text-color-light;
+    .postBlurbContent {
+      .postBlurbTitle {
+      }
+    }
+  }
+}
