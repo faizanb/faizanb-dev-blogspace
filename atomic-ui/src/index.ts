@@ -10,3 +10,4 @@ export { default as Footer } from './lib/molecules/Footer/Footer';
 export { default as Badges } from './lib/molecules/Badges/Badges';
 
 export { default as CodeBlock } from './lib/organisms/CodeBlock/CodeBlock';
+export { default as PostBlurb } from './lib/organisms/PostBlurb/PostBlurb';

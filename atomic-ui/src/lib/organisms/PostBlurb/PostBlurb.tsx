@@ -1,4 +1,4 @@
-import { DateLabel, FeaturedImage, Paragraph } from '@atomic-ui';
+import { DateLabel, FeaturedImage, Paragraph } from '../../../index';
 import Link from 'next/link';
 import styles from './PostBlurb.module.scss';
 
