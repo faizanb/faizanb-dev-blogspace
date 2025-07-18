@@ -1,11 +1,13 @@
 @import '~styles/theme.scss';
 @import '~styles/mixins.scss';
 
+$heading-margin: calc($space-xl + $space-md);
+
 .postContainer {
   display: flex;
   flex-direction: column;
   gap: $space-md;
-  margin-top: calc($space-xl + $space-md);
+  margin-top: $heading-margin;
   .contentSection {
     display: flex;
     flex-direction: column;

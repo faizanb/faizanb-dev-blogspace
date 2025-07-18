@@ -1,0 +1,16 @@
+@import '~styles/theme.scss';
+@import '~styles/mixins.scss';
+
+$heading-margin: calc($space-xl + $space-md);
+
+.blogListContainer {
+  display: flex;
+  flex-direction: column;
+  gap: $space-md;
+  margin-top: $heading-margin;
+  .blogList {
+    display: flex;
+    flex-direction: column;
+    gap: $space-lg;
+  }
+}
