@@ -1,4 +1,4 @@
-import { PageTitle, DateLabel, FeaturedImage, Paragraph } from '@atomic-ui';
+import { PageTitle, PostBlurb } from '@atomic-ui';
 import Link from 'next/link';
 import styles from './page.module.scss';
 
@@ -32,20 +32,11 @@ export default async function BlogListPage() {
       <div className={styles.blogList}>
         {posts.length === 0 && <p>No posts found.</p>}
         {posts.map((post: BlogPost) => (
-          <Link
+          <PostBlurb
+            {...post}
+            imageUrl={post.featuredImage?.formats?.small?.url}
             key={post.id}
-            href={`/blog/${post.slug}`}
-            className={styles.blogCard}
-          >
-            {post.featuredImage?.formats?.thumbnail && (
-              <FeaturedImage
-                imgSrc={`${process.env.NX_STRAPI_BASE_URL}${post.featuredImage.formats.thumbnail.url}`}
-              />
-            )}
-            <h2 className={styles.blogTitle}>{post.title}</h2>
-            <DateLabel dateString={post.publishedDate} />
-            <Paragraph content={post.excerpt} type="plainText" />
-          </Link>
+          />
         ))}
       </div>
     </div>

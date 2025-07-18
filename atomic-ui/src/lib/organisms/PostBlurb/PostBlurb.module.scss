@@ -1,31 +1,34 @@
 @import '~styles/theme.scss';
-@import '~styles/mixins.scss';
 
 .postBlurbCard {
   all: unset;
-  display: flex;
-  flex-direction: column;
-  border-radius: $border-radius-8;
+  cursor: pointer;
+  border-radius: $border-radius-12;
   border: 1px solid $text-color-dark;
   .postBlurbContent {
+    display: flex;
+    flex-direction: column;
+    gap: $space-sm;
+    padding: $space-sm $space-md $space-md;
     .postBlurbTitle {
+      margin: 0;
+      font-size: $font-size-lg;
     }
   }
 }
 
-@media (min-width: $breakpoint-md) {
-  .postBlurbCard {
-    flex-direction: row;
-    gap: $space-md;
+.postBlurbCard {
+  img {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+    width: 100%;
+    height: auto;
   }
 }
 
 html[data-theme='dark'] {
   .postBlurbCard {
     border: 1px solid $text-color-light;
-    .postBlurbContent {
-      .postBlurbTitle {
-      }
-    }
   }
 }
