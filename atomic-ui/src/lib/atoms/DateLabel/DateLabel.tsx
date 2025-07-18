@@ -7,7 +7,7 @@ const DateLabel = ({
 }: {
   labelPrefix?: string;
   dateString: string;
-  minutesToReadLabel: string;
+  minutesToReadLabel?: string;
 }) => (
   <div className={styles.dateLabel}>
     {labelPrefix && <span>{`${labelPrefix} `}</span>}
