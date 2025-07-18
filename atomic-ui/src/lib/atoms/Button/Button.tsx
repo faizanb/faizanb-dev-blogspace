@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './Button.module.scss';
 
@@ -6,23 +7,25 @@ const Button = ({
   showIcon = false,
   icon = '',
   withBg = false,
-  onClick,
+  url,
 }: {
   children: React.ReactNode;
   showIcon?: boolean;
   icon?: any;
   withBg?: boolean;
-  onClick?: () => void;
+  url: string;
 }) => (
-  <button
+  <Link
     className={`${styles.button} ${withBg ? styles.buttonBg : ''}`}
-    onClick={onClick}
+    href={url}
+    aria-label="Button"
+    role="button"
   >
     {showIcon && icon && (
       <FontAwesomeIcon icon={icon} className={styles.icon} />
     )}
     {children}
-  </button>
+  </Link>
 );
 
 export default Button;

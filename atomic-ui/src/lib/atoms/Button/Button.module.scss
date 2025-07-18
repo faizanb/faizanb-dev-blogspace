@@ -10,9 +10,10 @@
   border-radius: $border-radius-8;
   border: 1px solid $text-color-dark;
   cursor: pointer;
-  width: 100%;
   justify-content: center;
   margin-top: $space-md;
+  text-decoration: none;
+  width: 90%;
   .icon {
     width: $font-size-base;
     margin-right: $space-sm;

@@ -69,7 +69,7 @@ export default async function BlogPostPage({
           {data?.toc && data.toc?.length > 0 && (
             <TableOfContent toc={data.toc} />
           )}
-          <Button showIcon={true} icon={faArrowLeft}>
+          <Button showIcon={true} icon={faArrowLeft} url={`/blog`}>
             View other posts
           </Button>
         </section>
