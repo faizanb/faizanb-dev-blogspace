@@ -14,7 +14,7 @@ import BlogPostContent from './BlogPostContent';
 import styles from './page.module.scss';
 
 async function getBlogPost(slug: string): Promise<any> {
-  const res = await fetch(`${process.env.BASE_URL}/api/posts/${slug}`, {
+  const res = await fetch(`${process.env.BASE_URL}/api/post/${slug}`, {
     next: { revalidate: 120 },
   });
 
