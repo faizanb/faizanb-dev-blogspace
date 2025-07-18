@@ -13,7 +13,7 @@ export default function Index() {
           <div id="welcome">
             <h1>
               <span> Hello there, </span>
-              Welcome blog 👋
+              Welcome blog-ui 👋
             </h1>
           </div>
 
@@ -90,7 +90,7 @@ export default function Index() {
                 </svg>
               </a>
               <a
-                href="https://nx.dev/blog/?utm_source=nx-project"
+                href="https://nx.dev/blog-ui/?utm_source=nx-project"
                 target="_blank"
                 rel="noreferrer"
                 className="list-item-link"
@@ -397,7 +397,7 @@ export default function Index() {
                 </svg>
                 View project details
               </summary>
-              <pre>nx show project blog --web</pre>
+              <pre>nx show project blog-ui --web</pre>
             </details>
             <details>
               <summary>

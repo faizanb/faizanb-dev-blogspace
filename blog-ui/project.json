@@ -1,13 +1,13 @@
 {
-  "name": "blog",
+  "name": "blog-ui",
   "$schema": "../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "blog/src",
+  "sourceRoot": "blog-ui/src",
   "projectType": "application",
   "targets": {
     "serve": {
       "executor": "@nx/next:server",
       "options": {
-        "buildTarget": "blog:build",
+        "buildTarget": "blog-ui:build",
         "dev": true
       },
       "configurations": {
@@ -20,9 +20,9 @@
       "executor": "@nx/next:build",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/blog",
-        "root": "blog",
-        "srcRoot": "blog/src"
+        "outputPath": "dist/blog-ui",
+        "root": "blog-ui",
+        "srcRoot": "blog-ui/src"
       }
     }
   },
