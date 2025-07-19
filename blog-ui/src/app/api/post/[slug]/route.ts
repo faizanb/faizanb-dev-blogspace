@@ -8,7 +8,9 @@ export async function GET(
   const { slug } = context.params;
   const response = await handler({
     method: 'GET',
-    query: { endpoint: `/posts?filters[slug][$eq]=${slug}&populate=*` },
+    query: {
+      endpoint: `/posts?filters[slug][$eq]=${slug}&populate[content][populate]=*&populate[featuredImage][populate]=*&populate[tags][populate]=*&populate[seoMeta][populate]=*&populate[author][populate]=*&populate[socialLinks][populate]=*`,
+    },
   });
   if (response.status !== 200) {
     return NextResponse.json(
