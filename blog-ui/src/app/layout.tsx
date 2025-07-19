@@ -2,7 +2,7 @@
 import { ThemeProvider } from 'next-themes';
 import { Nunito_Sans } from 'next/font/google';
 import styles from './layout.module.scss';
-import '@styles/globals.scss';
+import '~styles/globals.scss';
 
 const layout_font = Nunito_Sans({
   weight: ['200', '300', '400', '500', '700'],

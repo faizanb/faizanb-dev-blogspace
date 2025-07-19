@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@atomic-ui": ["dist/atomic-ui/src/index.js"],
-      "@styles/*": ["styles/*"]
+      "~styles/*": ["styles/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
