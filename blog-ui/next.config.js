@@ -10,6 +10,7 @@ const path = require('path');
 const nextConfig = {
   // Use this to set Nx-specific options
   // See: https://nx.dev/recipes/next/next-config-setup
+  assetPrefix: '/blog',
   nx: {},
   sassOptions: {
     includePaths: [path.join(__dirname, '../../styles')],
