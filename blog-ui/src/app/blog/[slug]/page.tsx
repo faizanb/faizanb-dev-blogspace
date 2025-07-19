@@ -24,25 +24,36 @@ async function getBlogPost(slug: string): Promise<any> {
 
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { slug } = await params;
-  const apiRes = await getBlogPost(slug);
-  if (!apiRes || !apiRes.data || !apiRes.data[0]) return {};
-
-  const post = apiRes.data[0];
+  const post = await getBlogPost(slug);
   const seo = post.seoMeta || {};
 
+  const fullImageUrl = seo.metaImage
+    ? `${process.env.NX_STRAPI_BASE_URL}${seo.metaImage?.formats?.thumbnail?.url}`
+    : undefined;
+
   return {
-    title: seo.metaTitle || post.title,
-    description: seo.metaDescription || post.excerpt,
+    title: seo.metaTitle,
+    description: seo.metaDescription,
+    keywords: seo.metaKeywords?.split(',').map((k: string) => k.trim()),
+    alternates: {
+      canonical: seo.canonicalURL,
+    },
     openGraph: {
-      title: seo.ogTitle || seo.metaTitle || post.title,
-      description: seo.ogDescription || seo.metaDescription || post.excerpt,
-      images: seo.metaImage ? [seo.metaImage] : [],
+      type: 'article',
+      title: seo.ogTitle || seo.metaTitle,
+      description: seo.ogDescription || seo.metaDescription,
+      url: seo.canonicalURL,
+      images: fullImageUrl ? [{ url: fullImageUrl }] : [],
     },
     twitter: {
-      title: seo.twitterTitle || seo.metaTitle || post.title,
-      description:
-        seo.twitterDescription || seo.metaDescription || post.excerpt,
       card: 'summary_large_image',
+      title: seo.twitterTitle || seo.metaTitle,
+      description: seo.twitterDescription || seo.metaDescription,
+      images: fullImageUrl ? [fullImageUrl] : [],
+    },
+    robots: seo.robots,
+    other: {
+      structuredData: JSON.stringify(seo.structuredData),
     },
   };
 }
