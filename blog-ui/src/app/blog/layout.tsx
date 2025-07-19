@@ -46,7 +46,7 @@ export default function PostLayout({
           <Link href="/">
             <img
               className={styles.siteLogo}
-              src={'/faiza_logo_portfolio.svg'}
+              src={`${process.env.NEXT_PUBLIC_ASSET_PREFIX}/faiza_logo_portfolio.svg`}
               alt={'Faiza Dev Blogspace Logo'}
               width={50}
             />
