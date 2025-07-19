@@ -40,7 +40,7 @@ export default async function BlogListPage() {
           />
         ))}
       </div>
-      <Footer footerArray={posts[0].socialLinks} />
+      {posts.length > 0 && <Footer footerArray={posts[0].socialLinks} />}
     </div>
   );
 }
