@@ -1,77 +1,68 @@
-# FaizanbDevBlogspace
+# Faizanb Dev Blogspace Monorepo
 
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
+This is a modern [Nx](https://nx.dev) monorepo for a developer blog platform, featuring:
 
-✨ Your new, shiny [Nx workspace](https://nx.dev) is almost ready ✨.
+- **blog-ui**: Next.js 14 App Router app for the main blog UI
+- **atomic-ui**: Reusable React component library (with SCSS modules)
+- **Shared styles**: Centralized SCSS theme, mixins, and functions
+- **API routes**: Next.js API endpoints for blog data
 
-[Learn more about this workspace setup and its capabilities](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or run `npx nx graph` to visually explore what was created. Now, let's get you up to speed!
+---
 
-## Finish your CI setup
+## Getting Started
 
-[Click here to finish setting up your workspace!](https://cloud.nx.app/connect/K4jbSU2tKD)
-
-## Run tasks
-
-To run tasks with Nx use:
-
-```sh
-npx nx <target> <project-name>
-```
-
-For example:
+### 1. Install dependencies
 
 ```sh
-npx nx build myproject
+npm install
 ```
 
-These targets are either [inferred automatically](https://nx.dev/concepts/inferred-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) or defined in the `project.json` or `package.json` files.
+### 2. Development
 
-[More about running tasks in the docs &raquo;](https://nx.dev/features/run-tasks?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-## Add new projects
-
-While you could add new projects to your workspace manually, you might want to leverage [Nx plugins](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) and their [code generation](https://nx.dev/features/generate-code?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) feature.
-
-To install a new plugin you can use the `nx add` command. Here's an example of adding the React plugin:
+Build the UI library and run the blog app in development mode:
 
 ```sh
-npx nx add @nx/react
+npx nx build atomic-ui --skip-nx-cache
+npx nx serve blog-ui --skip-nx-cache
 ```
 
-Use the plugin's generator to create new projects. For example, to create a new React app or library:
+### 3. Production Build
+
+Build both the UI library and the blog app for production:
 
 ```sh
-# Generate an app
-npx nx g @nx/react:app demo
-
-# Generate a library
-npx nx g @nx/react:lib some-lib
+npx nx build atomic-ui --configuration=production --skip-nx-cache
+npx nx build blog-ui --configuration=production --skip-nx-cache
 ```
 
-You can use `npx nx list` to get a list of installed plugins. Then, run `npx nx list <plugin-name>` to learn about more specific capabilities of a particular plugin. Alternatively, [install Nx Console](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) to browse plugins and generators in your IDE.
+To serve the blog-ui app in production:
 
-[Learn more about Nx plugins &raquo;](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects) | [Browse the plugin registry &raquo;](https://nx.dev/plugin-registry?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+```sh
+npx nx serve blog-ui --configuration=production --skip-nx-cache
+```
 
-[Learn more about Nx on CI](https://nx.dev/ci/intro/ci-with-nx#ready-get-started-with-your-provider?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+## Project Structure
 
-## Install Nx Console
+```
+faizanb-dev-blogspace/
+├── atomic-ui/         # Reusable React component library (SCSS modules)
+├── blog-ui/           # Next.js app (App Router)
+├── styles/            # Shared SCSS theme, mixins, functions, globals
+├── dist/              # Build output
+├── nx.json, project.json, tsconfig.base.json, etc.
+```
 
-Nx Console is an editor extension that enriches your developer experience. It lets you run tasks, generate code, and improves code autocompletion in your IDE. It is available for VSCode and IntelliJ.
+## Features
 
-[Install Nx Console &raquo;](https://nx.dev/getting-started/editor-setup?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+- **Atomic Design:** UI built with atomic-ui library (atoms, molecules, organisms)
+- **SCSS Modules:** Component-scoped styles, shared theme and mixins
+- **Table of Contents:** Auto-generated from blog headings
+- **Reading Time:** Estimated minutes to read per post
+- **Theme Toggle:** Light/dark mode with persistence (via next-themes)
+- **Responsive Layout:** Fixed sidebar TOC, scrollable content
+- **SEO:** Metadata, OpenGraph, Twitter cards, structured data
+- **Nx-powered:** Fast builds, caching, and code sharing
 
-## Useful links
+## License
 
-Learn more:
-
-- [Learn more about this workspace setup](https://nx.dev/getting-started/intro#learn-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Learn about Nx on CI](https://nx.dev/ci/intro/ci-with-nx?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [Releasing Packages with Nx release](https://nx.dev/features/manage-releases?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-- [What are Nx plugins?](https://nx.dev/concepts/nx-plugins?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
-
-And join the Nx community:
-
-- [Discord](https://go.nx.dev/community)
-- [Follow us on X](https://twitter.com/nxdevtools) or [LinkedIn](https://www.linkedin.com/company/nrwl)
-- [Our Youtube channel](https://www.youtube.com/@nxdevtools)
-- [Our blog-ui](https://nx.dev/blog-ui?utm_source=nx_project&utm_medium=readme&utm_campaign=nx_projects)
+MIT
